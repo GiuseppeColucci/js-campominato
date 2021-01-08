@@ -29,6 +29,18 @@ console.log(numUtente)
  }
 
  //confronto
- if(numUtente.includes(numPc)){
-     alert('hai perso')
+var confronto=control(numPc,numUtente)
+
+
+
+ //funzioni
+ function control(list,num){
+     var finde=false;
+     for(var i=0; i<list.length; i++){
+         if(list[i]==(num)){
+             alert('hai perso')
+             finde=true;
+         }
+         return finde;
+     }
  }
