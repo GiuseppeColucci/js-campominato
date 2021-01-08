@@ -17,7 +17,8 @@ con difficoltà 2 => tra 1 e 50
 
  */
 //
-var numPc=[16,2,8,3];
+var numPc=random(16);
+console.log(numPc)
 
 
 //utente
@@ -45,5 +46,9 @@ var xz=random(10);
  }
  function random(index){
      var alfa=[];
-     return Math.floor(Math.random()*101);
+     for(n=0; n<index;n++){
+        var number=Math.floor(Math.random()*101);
+        alfa.push(number);
+     }
+     return alfa;
  }
