@@ -18,19 +18,32 @@ con difficoltà 2 => tra 1 e 50
  */
 //
 var numPc=random(16);
+var userLife=3;
+var scelteGiuste=[];
 console.log(numPc)
 
 
 //utente
- var utente=5;
+ var utente=true;
+while(utente==true && scelteGiuste.length<userLife){
+    var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'));
+    if(messageUtente>100){
+        alert('hai inserito un valore sbagliato')
+    }
+    else{
+        var confronto=control(numPc,messageUtente);
+        if(confronto==true){
+            utente=false;
+            alert('hai perso');
+        }
+        else{
+            scelteGiuste.push(messageUtente)
+        }
 
- for(var u=0; u<utente; u++){
-     var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'));
-     var confronto=control(numPc,messageUtente);
-     
+    }
     
- }
-
+}
+alert('HAI VINTO!!!!!!!')
  
  //funzioni numeri random
  
@@ -47,10 +60,9 @@ console.log(numPc)
         var finde=false;
         for(var i=0; i<list.length; i++){
             if(list[i]===num){
-                alert('hai perso') 
+                
                 finde=true;
             }
            }
            return finde;
     }
-    
