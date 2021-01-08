@@ -23,16 +23,18 @@ console.log(numPc)
 
 //utente
  var utente=5;
+
  for(var u=0; u<utente; u++){
-     var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'))
+     var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'));
      var confronto=control(numPc,messageUtente);
      
+    
  }
 
  
  //funzioni numeri random
  
- function random(index){
+    function random(index){
      var alfa=[];
      for(n=0; n<index;n++){
          var number=Math.floor(Math.random()*101);
@@ -45,9 +47,10 @@ console.log(numPc)
         var finde=false;
         for(var i=0; i<list.length; i++){
             if(list[i]===num){
-                alert('hai perso')
+                alert('hai perso') 
                 finde=true;
             }
            }
            return finde;
     }
+    
