@@ -29,26 +29,25 @@ console.log(numPc)
      
  }
 
- //confronto
-var xz=random(10);
-
-
- //funzioni
- function control(list,num){
-     var finde=false;
-     for(var i=0; i<list.length; i++){
-         if(list[i]===num){
-             alert('hai perso')
-             finde=true;
-         }
-        }
-        return finde;
- }
+ 
+ //funzioni numeri random
+ 
  function random(index){
      var alfa=[];
      for(n=0; n<index;n++){
-        var number=Math.floor(Math.random()*101);
-        alfa.push(number);
-     }
-     return alfa;
- }
+         var number=Math.floor(Math.random()*101);
+         alfa.push(number);
+        }
+        return alfa;
+    }
+    //funzioni controllo
+    function control(list,num){
+        var finde=false;
+        for(var i=0; i<list.length; i++){
+            if(list[i]===num){
+                alert('hai perso')
+                finde=true;
+            }
+           }
+           return finde;
+    }
