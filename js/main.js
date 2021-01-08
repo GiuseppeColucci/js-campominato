@@ -18,29 +18,32 @@ con difficoltà 2 => tra 1 e 50
  */
 //
 var numPc=[16,2,8,3];
-var numUtente=[] 
-console.log(numUtente)
+
 
 //utente
  var utente=5;
  for(var u=0; u<utente; u++){
      var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'))
-     numUtente.push(messageUtente)
+     var confronto=control(numPc,messageUtente);
+     
  }
 
  //confronto
-var confronto=control(numPc,numUtente)
-
+var xz=random(10);
 
 
  //funzioni
  function control(list,num){
      var finde=false;
      for(var i=0; i<list.length; i++){
-         if(list[i]==(num)){
+         if(list[i]===num){
              alert('hai perso')
              finde=true;
          }
-         return finde;
-     }
+        }
+        return finde;
+ }
+ function random(index){
+     var alfa=[];
+     return Math.floor(Math.random()*101);
  }
