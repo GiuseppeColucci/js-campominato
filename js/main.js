@@ -20,14 +20,16 @@ con difficoltà 2 => tra 1 e 50
 var numPc=random(16);
 var userLife=3;
 var scelteGiuste=[];
-console.log(numPc)
+console.log(numPc);
+console.log(scelteGiuste);
+
 
 
 //utente
  var utente=true;
 while(utente==true && scelteGiuste.length<userLife){
     var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'));
-    if(messageUtente>100){
+    if(messageUtente>100 || messageUtente<=0 || messageUtente == scelteGiuste){
         alert('hai inserito un valore sbagliato')
     }
     else{
@@ -39,11 +41,15 @@ while(utente==true && scelteGiuste.length<userLife){
         else{
             scelteGiuste.push(messageUtente)
         }
-
+        if(scelteGiuste.length===userLife){
+            
+            alert('HAI VINTO!!!!!!!');
+        }
     }
     
 }
-alert('HAI VINTO!!!!!!!')
+
+
  
  //funzioni numeri random
  
