@@ -18,25 +18,25 @@ con difficoltà 2 => tra 1 e 50
  */
 //
 var numPc=random(16);
-var userLife=3;
+var userLife=84;
 var scelteGiuste=[];
-console.log(numPc);
-console.log(scelteGiuste);
 
 
 
 //utente
- var utente=true;
+var utente=true;
 while(utente==true && scelteGiuste.length<userLife){
-    var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'));
+    console.log(numPc);
+    console.log(scelteGiuste);
+    var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE! compreso tra 1 e 100'));
     if(messageUtente>100 || messageUtente<=0 || messageUtente == scelteGiuste){
-        alert('hai inserito un valore sbagliato')
+        alert('hai inserito un valore sbagliato (un valore ripetuto!; che sia superiore  100 o inferiore a 1!!)')
     }
     else{
         var confronto=control(numPc,messageUtente);
         if(confronto==true){
             utente=false;
-            alert('hai perso');
+            alert('Boom!! hai perso!!!!');
         }
         else{
             scelteGiuste.push(messageUtente)
