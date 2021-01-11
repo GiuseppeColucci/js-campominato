@@ -16,12 +16,9 @@ con difficoltà 2 => tra 1 e 50
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
  */
-//
+
+//scelta del livello
 var livel=parseInt(prompt('inserisci un livello di difficolta! 0; 1; 2'));
-
-
-
-//var numPc=random(1,100);
 var userLife=3;
 var scelteGiuste=[];
 var alfa=[];
@@ -30,17 +27,20 @@ for(n=0; n<16;n++){
     switch(livel){
         case 0:
             numPc=random(1, 100);
-            alfa.push(numPc);
+            
             break;
         case 1:
             numPc=random(1, 80);
-            alfa.push(numPc);
+            
             break;
         case 2:
             numPc=random(1, 50);
-            alfa.push(numPc);
+            
             break;
         default:
+    }
+    if(alfa.includes(numPc)===false){
+        alfa.push(numPc);
     }
 }
 
@@ -51,9 +51,9 @@ var utente=true;
 while(utente==true && scelteGiuste.length<userLife){
     console.log(alfa);
     console.log(scelteGiuste);
-    var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE! compreso tra 1 e 100'));
-    if(messageUtente>100 || messageUtente<=0 || messageUtente == scelteGiuste ){
-        alert('hai inserito un valore sbagliato (un valore ripetuto!; che sia superiore  100 o inferiore a 1!!)')
+    var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE!'));
+    if(messageUtente>100 || messageUtente<=0 || messageUtente == scelteGiuste || messageUtente===isNaN){
+        alert('hai inserito un valore sbagliato!! RIPROVA! :-)')
     }
     else{
         var confronto=control(alfa, messageUtente);
