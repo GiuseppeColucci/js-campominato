@@ -36,8 +36,9 @@ switch(livel){
 var userLife=3;
 var scelteGiuste=[];
 var alfa=[];
+var numPc;
 for(n=0; n<16;n++){
-    var numPc=random(1, 100);
+    numPc=random(1, 100);
     alfa.push(numPc);
 
 }
