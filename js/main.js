@@ -17,6 +17,20 @@ con difficoltà 2 => tra 1 e 50
 
  */
 //
+var livel=parseInt(prompt('inserisci un livello di difficolta! 0; 1; 2'));
+
+switch(livel){
+    case '0':
+        numPc=random(1, 100);
+        break;
+    case '1':
+        numPc=random(1, 80);
+        break;
+    case '2':
+        numPc=random(1, 50);
+        break;
+    default:
+}
 
 //var numPc=random(1,100);
 var userLife=3;
