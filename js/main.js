@@ -17,23 +17,30 @@ con difficoltà 2 => tra 1 e 50
 
  */
 //
-var numPc=random(16);
-var userLife=84;
+
+//var numPc=random(1,100);
+var userLife=3;
 var scelteGiuste=[];
+var alfa=[];
+for(n=0; n<16;n++){
+    var numPc=random(1, 100);
+    alfa.push(numPc);
+
+}
 
 
 
 //utente
 var utente=true;
 while(utente==true && scelteGiuste.length<userLife){
-    console.log(numPc);
+    console.log(alfa);
     console.log(scelteGiuste);
     var messageUtente=parseInt(prompt('inserisci un numero per GIOCARE! compreso tra 1 e 100'));
     if(messageUtente>100 || messageUtente<=0 || messageUtente == scelteGiuste){
         alert('hai inserito un valore sbagliato (un valore ripetuto!; che sia superiore  100 o inferiore a 1!!)')
     }
     else{
-        var confronto=control(numPc,messageUtente);
+        var confronto=control(alfa, messageUtente);
         if(confronto==true){
             utente=false;
             alert('Boom!! hai perso!!!!');
@@ -51,16 +58,20 @@ while(utente==true && scelteGiuste.length<userLife){
 
 
  
- //funzioni numeri random
- 
-    function random(index){
-     var alfa=[];
-     for(n=0; n<index;n++){
-         var number=Math.floor(Math.random()*101);
-         alfa.push(number);
-        }
-        return alfa;
-    }
+
+//funzioni numeri random
+function random(min, max){
+    var number=Math.floor(Math.random() * ( max + 1 - min) + min);
+    return number;
+   }
+    // function random(index){
+    //  var alfa=[];
+    //  for(n=0; n<index;n++){
+    //      var number=Math.floor(Math.random()*101);
+    //      alfa.push(number);
+    //     }
+    //     return alfa;
+    // }
     //funzioni controllo
     function control(list,num){
         var finde=false;
